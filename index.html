@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,33 +11,40 @@
     input {
         margin: 10px;
         height: 30px;
-        border-bottom-left-radius: 15px ;
+        border-bottom-left-radius: 15px;
         border-bottom: 3px solid paleturquoise;
         width: 200px;
         margin-left: 500px;
         /* border-radius: 5px; */
     }
-    input[type="submit"]{
+
+    input[type="submit"] {
         width: 90px;
         background-color: paleturquoise;
         color: rgb(51, 19, 71);
         font-weight: bold;
     }
-    h2{
+
+    h2 {
         color: white;
         text-align: center;
     }
 </style>
+
 <body style="background-image: linear-gradient(to right,blue,rgb(176, 183, 187),purple);background-color: blue;">
     <input type="number" id="num1" placeholder="Number1"><br>
     <input type="number" id="num2" placeholder="Number2"><br>
-    <input type="text" id ="op" placeholder="Operator"><br>
-    <input type="submit" onclick="result()" value="Submit">
+    <input type="text" id="op" placeholder="Operator"><br>
+    <input type="submit" id="click" value="Submit">
     <h2 id="res"></h2>
     <script type="module">
-        import {num1,num2,op,res} from "./module.js";
-        import {result} from "./module.js";
-        window.result = result
+        import { num1, num2, op, res, click,result } from "./module.js";
+        // window.result = result
+        click.addEventListener("click", () => {
+           return result(num1,num2,op,res)
+        })
+
     </script>
 </body>
+
 </html>
