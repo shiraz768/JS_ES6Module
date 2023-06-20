@@ -1,0 +1,30 @@
+*CREATE TABLE employee(
+   id int NOT null,
+    first_name varchar(255) NOT null,
+    last_name varchar(255) NOT null,
+    age int(11) NOT null,
+    gender varchar(255) NOT null,
+    contact int(11)NOT null,
+    address varchar(255) NOT null,
+    salary varchar(255) NOT null,
+    depart varchar(255) NOT null,
+    date_of_join date NOT null
+)*/
+/*INSERT INTO employee(id,first_name,last_name,age,gender,contact,address,salary,depart,date_of_join) VALUES
+(1,"hunain","ahmed",26,"male",880272202,"abc colony, karachi, pakistan",72000,"faculty","22-6-22"),
+(2,"ali","ahmed",29,"male",8804545202,"mvc colony, karachi, pakistan",80000,"recovery","21-6-22"),
+(3,"riaz","ahmed",20,"male",880674302,"llp colony, karachi, pakistan",65000,"admin","20-6-22"),
+(4,"muhammad","ahmed",24,"male",878872202,"ftt colony, karachi, pakistan",79000,"faculty","19-6-22"),
+(5,"rubina","ahmed",35,"male",8802898902,"poo colony, karachi, pakistan",72000,"coordinator","18-6-22"),
+(6,"sameer","ahmed",45,"male",880675454,"kii colony, karachi, pakistan",56000,"recovery","20-6-22"),
+(7,"rehana","ahmed",34,"male",8889856656,"lpp colony, karachi, pakistan",89000,"admin","22-6-22"),
+(8,"shiraz","ahmed",34,"male",8889856656,"master colony, karachi, pakistan",100000,"management","23-6-22")*/
+
+
+SELECT COUNT(*) as total_emp,SUM(salary) as total_salary, depart FROM employee
+GROUP by last_name,address
+HAVING SUM(salary) > 100000
+/*UPDATE employee 
+SET address = "abc colony, karachi, pakistan"
+WHERE address = "mvc colony, karachi, pakistan"
+*/
